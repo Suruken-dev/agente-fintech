@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  agente-fintech:
+    build: .
+    container_name: agente-fintech
+    ports:
+      - "8000:8000"
+      - "8501:8501"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - VECTORSTORE_DIR=./vectorstore
+      - EMBEDDINGS_MODEL=paraphrase-multilingual-MiniLM-L12-v2
+      - LLM_MODEL=gemini-2.0-flash-001
+      - CHUNK_SIZE=1000
+      - CHUNK_OVERLAP=200
+      - TOP_K_DOCUMENTS=5
+    volumes:
+      - ./vectorstore:/app/vectorstore
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
