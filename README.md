@@ -45,7 +45,6 @@ El sistema utiliza **RAG (Retrieval-Augmented Generation)** para recuperar fragm
 agente-fintech/
 
 ├── app/
-
 │ ├── api.py # Endpoints FastAPI
 │ ├── ingest.py # Pipeline de ingestión y generación del vectorstore
 │ └── rag.py # Lógica RAG (recuperación + generación)
