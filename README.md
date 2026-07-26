@@ -58,6 +58,21 @@ El sistema utiliza **RAG (Retrieval-Augmented Generation)** para recuperar fragm
 
 ## 📂 Estructura del proyecto
 agente-fintech/
+├── app/
+│ ├── api.py # Endpoints FastAPI
+│ ├── ingest.py # Pipeline de ingestión y generación del vectorstore
+│ └── rag.py # Lógica RAG (recuperación + generación)
+├── ui/
+│ └── app.py # Aplicación Streamlit (chat web)
+├── data/ # Documentos fuente (PDF, Word, Excel, etc.)
+├── vectorstore/ # Índice FAISS generado (local)
+├── logs/ # Registros de actividad
+├── requirements.txt # Dependencias Python
+├── Dockerfile # Imagen Docker
+├── docker-compose.yml # Orquestación de contenedores
+├── .env # Variables de entorno (NO subir a GitHub)
+├── .gitignore # Archivos a excluir
+└── README.md # Este archivo
 ---
 
 ## 🚀 Instalación y ejecución local
