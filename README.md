@@ -43,6 +43,7 @@ El sistema utiliza **RAG (Retrieval-Augmented Generation)** para recuperar fragm
 ## 📂 Estructura del proyecto
 
 agente-fintech/
+
 ├── app/
 
 │ ├── api.py # Endpoints FastAPI
