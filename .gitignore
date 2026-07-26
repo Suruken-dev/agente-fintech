@@ -1,0 +1,30 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Variables de entorno (¡contiene la API Key!)
+.env
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Vectorstore (se puede regenerar, ocupa espacio)
+vectorstore/
+
+# Logs
+logs/
+*.log
+
+# Configuraciones de editores
+.vscode/
+.idea/
+*.swp
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
