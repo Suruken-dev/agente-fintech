@@ -82,7 +82,7 @@ agente-fintech/
 git clone https://github.com/Suruken-dev/agente-fintech.git
 cd agente-fintech
 
-#2. Crear y activar entorno virtual
+### 2. Crear y activar entorno virtual
 python -m venv venv
 # Windows
 venv\Scripts\activate
