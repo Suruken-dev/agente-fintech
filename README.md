@@ -40,23 +40,8 @@ El sistema utiliza **RAG (Retrieval-Augmented Generation)** para recuperar fragm
 
 ---
 
-## 🧰 Tecnologías utilizadas
-
-| Categoría | Tecnología |
-| :--- | :--- |
-| **Lenguaje** | Python 3.12 |
-| **Framework Backend** | FastAPI, Uvicorn |
-| **Frontend** | Streamlit |
-| **Procesamiento de documentos** | LangChain, Unstructured, PyPDF, python-docx, openpyxl |
-| **Embeddings** | HuggingFace `paraphrase-multilingual-MiniLM-L12-v2` |
-| **Vectorstore** | FAISS (búsqueda semántica local) |
-| **LLM** | Google Gemini (vía `langchain-google-genai`) |
-| **Contenerización** | Docker, Docker Compose |
-| **Nube** | Oracle Cloud Infrastructure (OCI) |
-
----
-
 ## 📂 Estructura del proyecto
+
 agente-fintech/
 ├── app/
 │ ├── api.py # Endpoints FastAPI
@@ -73,6 +58,7 @@ agente-fintech/
 ├── .env # Variables de entorno (NO subir a GitHub)
 ├── .gitignore # Archivos a excluir
 └── README.md # Este archivo
+
 ---
 
 ## 🚀 Instalación y ejecución local
@@ -83,19 +69,21 @@ git clone https://github.com/Suruken-dev/agente-fintech.git
 cd agente-fintech
 
 ### 2. Crear y activar entorno virtual
+```bash
 python -m venv venv
 # Windows
 venv\Scripts\activate
 # Linux/macOS
 source venv/bin/activate
 
-#3. Instalar dependencias
+### 3. Instalar dependencias
+```bash
 pip install -r requirements.txt
 
-#4. Configurar variables de entorno
-
+### 4. Configurar variables de entorno
 Crea un archivo .env en la raíz con tu clave de Gemini:
 
+env
 GOOGLE_API_KEY=tu_clave_aqui
 VECTORSTORE_DIR=./vectorstore
 EMBEDDINGS_MODEL=paraphrase-multilingual-MiniLM-L12-v2
@@ -104,82 +92,19 @@ CHUNK_SIZE=1000
 CHUNK_OVERLAP=200
 TOP_K_DOCUMENTS=5
 
-#5. Indexar los documentos (generar vectorstore)
+### 5. Indexar los documentos (generar vectorstore)
+```bash
 python app/ingest.py
 
-#6. Ejecutar la API (FastAPI)
+### 6. Ejecutar la API (FastAPI)
+```bash
 uvicorn app.api:app --reload --host 127.0.0.1 --port 8000
 
-#7. Ejecutar la interfaz (Streamlit)
+###7. Ejecutar la interfaz (Streamlit)
 En otra terminal (con el entorno activado):
-
+```bash
 streamlit run ui/app.py
 
-#8. Abrir el navegador
-API: http://localhost:8000/docs
-
-Interfaz: http://localhost:8501
-
-
-🐳 Despliegue en Oracle Cloud (OCI)
-El proyecto está contenerizado para facilitar el despliegue en OCI.
-
-1. Construir la imagen Docker
-bash
-docker build -t agente-fintech .
-2. Ejecutar con Docker Compose
-bash
-docker-compose up -d
-3. En OCI Compute (VM)
-Crear una instancia VM.Standard.E2.1.Micro (Always Free).
-
-Instalar Docker y Docker Compose.
-
-Clonar el repositorio.
-
-Configurar el archivo .env con las variables necesarias.
-
-Ejecutar docker-compose up -d.
-
-Abrir los puertos 8000 (API) y 8501 (Streamlit) en la VCN.
-
-📸 Evidencia de ejecución en la nube
-Requisito del desafío: Incluir una imagen o video del agente funcionando en la nube.
-
-<img src="https://via.placeholder.com/800x400?text=Captura+de+pantalla+del+agente+en+OCI" alt="Agente ejecutándose en OCI" width="800">
-(Reemplaza este placeholder con tu captura real una vez desplegado).
-
-🤝 Cómo contribuir
-Haz un fork del proyecto.
-
-Crea tu rama de características (git checkout -b feature/nueva-funcionalidad).
-
-Realiza tus cambios y haz commit (git commit -m 'Añadir nueva funcionalidad').
-
-Sube tu rama (git push origin feature/nueva-funcionalidad).
-
-Abre un Pull Request.
-
-📄 Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-
-✒️ Autor
-Andrés
-GitHub · LinkedIn
-
-🙏 Agradecimientos
-Alura Latam por el desafío y el material educativo.
-
-Google Gemini por la API de LLM.
-
-Comunidad de código abierto por las herramientas utilizadas.
-
-<p align="center">Hecho con ❤️ para aprender y compartir.</p> ```
-🎨 Notas para personalizar:
-Insignias: Las rutas de las insignias son ejemplos genéricos. Puedes personalizarlas desde shields.io.
-
-Imagen de evidencia: Reemplaza el placeholder de la captura por una imagen real de tu agente ejecutándose en OCI (es un requisito del desafío).
-
-Autor: Cambia los enlaces y el nombre por los tuyos.
-
-Licencia: Si no tienes licencia, puedes omitir esa sección o añadir una.
+###8. Abrir el navegador
+- API: http://localhost:8000/docs
+- Interfaz: http://localhost:8501
