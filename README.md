@@ -146,6 +146,9 @@ Crear una instancia VM.Standard.E2.1.Micro (Always Free).
 
 ## 📸 Evidencia de ejecución en la nube
 
+<img width="1408" height="768" alt="Agente Fintech" src="https://github.com/user-attachments/assets/aa0ae3be-8cf2-46cd-9b6f-40075b48ddf7" />
+
+<img width="1408" height="770" alt="Agente Fintech streamli" src="https://github.com/user-attachments/assets/def21689-524b-48a8-914a-12b9fc605b21" />
 
 ---
 
